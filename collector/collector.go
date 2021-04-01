@@ -1,4 +1,4 @@
-package main
+package collector
 
 import (
 	"github.com/prometheus/client_golang/prometheus"
@@ -15,13 +15,13 @@ type k8sCollector struct {
 
 //You must create a constructor for you collector that
 //initializes every descriptor and returns a pointer to the collector
-func newK8sCollector() *k8sCollector {
+func NewK8sCollector() *k8sCollector {
 	return &k8sCollector{
-		k8sMetric: prometheus.NewDesc("k8s_metric",
+		k8sMetric: prometheus.NewDesc("k8s_metric_test1",
 			"test metric",
 			nil, nil,
 		),
-		barMetric: prometheus.NewDesc("bar_metric",
+		barMetric: prometheus.NewDesc("k8s_metric_test2",
 			"test_metric2",
 			nil, nil,
 		),
